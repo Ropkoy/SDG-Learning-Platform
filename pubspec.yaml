@@ -58,7 +58,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-   assets:
+Flutter:
+  assets:
     - images/logo.png
     - images/SDGIcon.png
     - images/SDG4.jpg
@@ -81,7 +82,7 @@ flutter:
     - images/SDG4C.png
     - images/SDG1C.png
     - images/SDGC2.png
-   
+    - images/logo.png
     -
     -
     -
