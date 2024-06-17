@@ -1,79 +1,70 @@
 import 'package:flutter/material.dart';
+import 'package:sdg_learning_platform/individual_sdg_screen.dart';
 
-class IndividualSdgScreen extends StatelessWidget {
-  final int? sdgId;
-
-  const IndividualSdgScreen({required this.sdgId});
+class SdgListScreen extends StatelessWidget {
+  // Sample SDG data with non-constant variables (consider using constants for image paths)
+  final List<Sdg> sdgs = [
+    Sdg(number: 1, title: 'No Poverty', image: 'images/SDG1.png'),
+    Sdg(number: 2, title: 'Zero Hunger', image: 'images/zeroHunger.png'),
+    // ... Add entries for all 17 SDGs
+    Sdg(
+        number: 17,
+        title: 'Partnerships for the Goals',
+        image: 'images/SDG17.png'),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('SDG $sdgId'),
+        title: const Text('SDGs'),
       ),
-      body: SingleChildScrollView(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              if (sdgId == 1) ...[
-                // Content for SDG 1 (No Poverty)
-                Text("NO POVERTY"), // Title
-                Container(
-                  child: Image.asset(
-                    "images/SDG1C.png", // Replace with your image path
-                    fit: BoxFit.contain,
-                  ),
-                ),
-                Text(
-                  "SDG 1 aims to eradicate extreme poverty for all people everywhere.", // Description
-                ),
-                // Add more widgets for SDG 1 content
-              ] else if (sdgId == 2) ...[
-                // Content for SDG 2 (Zero Hunger)
-                Text("ZERO HUNGER"), // Title
-                Container(
-                  child: Image.asset(
-                    "images/SDGC2.png", // Replace with your image path
-                    fit: BoxFit.contain,
-                  ),
-                ),
-                Text(
-                  "SDG 2 focuses on ending hunger, achieving food security, and improved nutrition.", // Description
-                ),
-                // Add more widgets for SDG 2 content
-              ] else if (sdgId == 3) ...[
-                // Content for SDG 3 (Good Health and Well-being)
-                Text("GOOD HEALTH AND WELL-BEING"), // Title
-                Container(
-                  child: Image.asset(
-                    "images/SDG3.jpg", // Replace with your image path
-                    fit: BoxFit.contain,
-                  ),
-                ),
-                Text(
-                  "SDG 3 strives to ensure healthy lives and promote well-being for all at all ages.", // Description
-                ),
-                // Add more widgets for SDG 3 content
-              ] else if (sdgId == 4) ...[ // Add condition for SDG 4
-                Text("QUALITY EDUCATION"), // Title
-                Container(
-                  child: Image.asset(
-                    "images/SDG4C.png", // Replace with your image path
-                    fit: BoxFit.contain,
-                  ),
-                ),
-                Text(
-                  "SDG 4 is all about making sure everyone gets a chance to learn and grow through quality education.", // Description
-                ),
-                // Add more widgets for SDG 4 content
-              ] else ...[
-                // Placeholder message for missing SDG ID
-                Text("No SDG details available for ID: $sdgId"),
-              ],
-            ],
-          ),
-        ),
+      body: ListView.builder(
+        itemCount: sdgs.length,
+        itemBuilder: (context, index) {
+          final sdg = sdgs[index];
+          return SdgListItem(
+            sdg: sdg,
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => IndividualSdgScreen(
+                      sdg: sdg, sdgId: sdg.number)), // Pass sdg.number as sdgId
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
+
+// Model class to represent an SDG (Sustainable Development Goal)
+class Sdg {
+  final int number;
+  final String title;
+  final String image;
+
+  const Sdg({required this.number, required this.title, required this.image});
+}
+
+// Widget to display a single SDG list item
+class SdgListItem extends StatelessWidget {
+  final Sdg sdg;
+
+  const SdgListItem({Key? key, required this.sdg}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: CircleAvatar(
+        backgroundImage: AssetImage(sdg.image), // Set the image from SDG data
+      ),
+      title: Text(sdg.title), // Set the title from SDG data
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => IndividualSdgScreen(
+                sdg: sdg, sdgId: sdg.number)), // Pass sdg.number as sdgId
       ),
     );
   }

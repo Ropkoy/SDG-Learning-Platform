@@ -23,6 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
+                // Consider using a named route if using MaterialApp with routes
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => SdgListScreen()),

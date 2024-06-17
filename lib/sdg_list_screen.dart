@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'individual_sdg_screen.dart';
+
 class SdgListScreen extends StatelessWidget {
   // Sample SDG data with non-constant variables
   final List<Sdg> sdgs = [
@@ -26,6 +28,14 @@ class SdgListScreen extends StatelessWidget {
           final sdg = sdgs[index]; // Get the current SDG object from the list
           return SdgListItem(
             sdg: sdg,
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => IndividualSdgScreen(
+                        sdg: sdg,
+                        sdgId: null,
+                      )),
+            ),
           ); // Pass the SDG object to the list item widget
         },
       ),
@@ -46,7 +56,9 @@ class Sdg {
 class SdgListItem extends StatelessWidget {
   final Sdg sdg;
 
-  const SdgListItem({Key? key, required this.sdg}) : super(key: key);
+  const SdgListItem(
+      {Key? key, required this.sdg, required Future Function() onTap})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

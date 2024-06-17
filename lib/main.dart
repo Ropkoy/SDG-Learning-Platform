@@ -36,7 +36,8 @@ class _MyAppState extends State<MyApp> {
       case 'sdg_list':
         return SdgListScreen();
       case 'individual_sdg':
-        int? someSdgId;
+        // Assuming you have an sdgId variable
+        String? someSdgId;
 
         return IndividualSdgScreen(sdgId: someSdgId);
       default:
@@ -44,3 +45,4 @@ class _MyAppState extends State<MyApp> {
     }
   }
 }
+

@@ -17,6 +17,7 @@ class _LoginScreenState extends State<LoginScreen> {
     String username = _usernameController.text;
     String password = _passwordController.text;
     // Implement login logic using username and password (e.g., call an API)
+    // ignore: avoid_print
     print('Username: $username, Password: $password'); // For now, just print for demonstration
   }
 
