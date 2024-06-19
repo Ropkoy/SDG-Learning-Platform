@@ -1,1 +1,1 @@
- A new flutter project
+ SDG Learning platform project.
