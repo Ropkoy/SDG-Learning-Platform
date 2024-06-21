@@ -58,41 +58,31 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-Flutter:
   assets:
-    - images/logo.png
-    - images/SDGIcon.png
-    - images/SDG4.jpg
-    - images/water.png
-    - images/zerohunger.png
-    - images/goodhealth.png
-    - images/SDG5.png
-    - images/SDG1.png
-    - images/SDG7.png
-    - images/SDG8.png
-    - images/SDG9.png
-    - images/SDG10.png
-    - images/SDG11.png
-    - images/SDG12.png
-    - images/SDG13.png
-    - images/SDG14.png
-    - images/SDG15.jpg
-    - images/SDG16.png
-    - images/SDG17.png
-    - images/SDG4C.png
-    - images/SDG1C.png
-    - images/SDGC2.png
-    - images/logo.png
-    -
-    -
-    -
-    -
-    -
-    -
-    -
-    -
-    -
-    -
+   - images/logo.png
+   - images/SDGIcon.png
+   - images/SDG1.png
+   - images/SDG1C.png
+   - images/SDG4.jpg
+   - images/goodhealth.png
+   - images/SDG4C.png
+   - images/SDG5.png
+   - images/SDG7.png
+   - images/SDG8.png
+   - images/SDG9.png
+   - images/SDG10.png
+   - images/SDG11.png
+   - images/SDG12.png
+   - images/SDG13.png
+   - images/SDG14.png
+   - images/SDG15.jpg
+   - images/SDG16.png
+   - images/SDG17.png
+   - images/SDGC2.png
+   - images/water.png
+   - images/zerohunger.png
+   
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
