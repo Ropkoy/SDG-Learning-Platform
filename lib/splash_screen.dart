@@ -31,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
         // Constrain the width and height of the container to fit the screen
         constraints: BoxConstraints.expand(),
         child: Stack(
-          // Use Stack to position elements on top of each other
+          // position elements on top of each other
           children: [
             // Center the image horizontally and vertically
             Align(

@@ -19,8 +19,8 @@ class IndividualSdgScreen extends StatelessWidget {
             Text("SDG 4 - Education"), // SDG title
             // Wrap Image.asset with SizedBox to set a fixed size
             SizedBox(
-              width: 800.0, // Adjust width as desired
-              height: 400.0, // Adjust height as desired
+              width: 800.0, 
+              height: 400.0,
               child: Image.asset(
                 "images/SDG4C.png",
               ),

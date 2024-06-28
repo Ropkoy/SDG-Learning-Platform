@@ -16,11 +16,10 @@ class HomeScreen extends StatelessWidget {
               "Let's explore the Sustainable Development Goals!",
               style: TextStyle(fontSize: 25.0),
             ),
-            const SizedBox(
-                height: 20.0), // Add some spacing between text and image
+            const SizedBox(height: 20.0), // Add spacing between text and image
             Container(
-              height: 500.0, // Adjust height as needed
-              width: 700.0, // Adjust width as needed
+              height: 500.0,
+              width: 700.0,
               child: Image.asset(
                 "images/SDGIcon.png",
               ),
