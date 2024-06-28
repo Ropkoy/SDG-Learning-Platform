@@ -18,8 +18,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: SplashScreen(), // Set SplashScreen as the initial route
       routes: {
-        '/login': (context) => LoginScreen(),
         '/register': (context) => RegScreen(),
+        '/login': (context) => LoginScreen(),
         '/home': (context) => HomeScreen(),
         '/sdg_list': (context) => SdgListScreen(),
         '/individual_sdg': (context) => IndividualSdgScreen(
